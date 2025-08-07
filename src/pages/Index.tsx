@@ -7,6 +7,7 @@ import { PlaystyleSelector, Playstyle } from "@/components/PlaystyleSelector";
 import { BuildGenerator } from "@/components/BuildGenerator";
 import { BuildHistory } from "@/components/BuildHistory";
 import { useToast } from "@/hooks/use-toast";
+import { BuildData } from "@/types/build";
 import { 
   Flame, 
   Shield, 
@@ -16,24 +17,6 @@ import {
   Twitter
 } from "lucide-react";
 import heroImage from "@/assets/diablo-hero.jpg";
-
-interface BuildData {
-  id: string;
-  name: string;
-  class: string;
-  playstyle: string;
-  rating: number;
-  difficulty: string;
-  author: string;
-  lastUpdated: string;
-  tags: string[];
-  stats: {
-    damage: number;
-    defense: number;
-    speed: number;
-    utility: number;
-  };
-}
 
 const Index = () => {
   const [selectedClass, setSelectedClass] = useState<string | null>(null);

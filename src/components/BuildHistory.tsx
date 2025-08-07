@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { BuildData } from "@/types/build";
 import { 
   Star, 
   Clock, 
@@ -9,24 +10,6 @@ import {
   Share2,
   History
 } from "lucide-react";
-
-interface BuildData {
-  id: string;
-  name: string;
-  class: string;
-  playstyle: string;
-  rating: number;
-  difficulty: string;
-  author: string;
-  lastUpdated: string;
-  tags: string[];
-  stats: {
-    damage: number;
-    defense: number;
-    speed: number;
-    utility: number;
-  };
-}
 
 interface BuildHistoryProps {
   builds: BuildData[];
@@ -100,9 +83,9 @@ export const BuildHistory = ({ builds, onBuildSelect, onBuildDelete }: BuildHist
                 <Badge variant="secondary" className="text-xs">{build.difficulty}</Badge>
               </div>
               
-              <div className="flex items-center space-x-2 text-xs text-muted-foreground">
+               <div className="flex items-center space-x-2 text-xs text-muted-foreground">
                 <Clock className="h-3 w-3" />
-                <span>{build.lastUpdated}</span>
+                <span>{build.created_at ? new Date(build.created_at).toLocaleDateString() : 'Unknown'}</span>
               </div>
             </CardHeader>
             
@@ -164,8 +147,11 @@ export const BuildHistory = ({ builds, onBuildSelect, onBuildDelete }: BuildHist
                   variant="outline" 
                   size="sm"
                   onClick={(e) => {
-                    e.stopPropagation();
-                    navigator.clipboard.writeText(`Check out my ${build.name} build!`);
+                     e.stopPropagation();
+                    const shareText = build.source_url 
+                      ? `Check out this ${build.name} build from ${build.source_site}: ${build.source_url}`
+                      : `Check out my ${build.name} build!`;
+                    navigator.clipboard.writeText(shareText);
                   }}
                 >
                   <Share2 className="h-3 w-3" />
