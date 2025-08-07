@@ -14,7 +14,140 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      builds: {
+        Row: {
+          author: string | null
+          class: string
+          created_at: string
+          difficulty: string | null
+          gear: Json
+          id: string
+          is_meta: boolean | null
+          name: string
+          patch_version: string | null
+          playstyle: string
+          rating: number | null
+          season: string | null
+          skills: Json
+          source_site: string | null
+          source_url: string | null
+          stats: Json
+          tags: string[] | null
+          updated_at: string
+        }
+        Insert: {
+          author?: string | null
+          class: string
+          created_at?: string
+          difficulty?: string | null
+          gear?: Json
+          id?: string
+          is_meta?: boolean | null
+          name: string
+          patch_version?: string | null
+          playstyle: string
+          rating?: number | null
+          season?: string | null
+          skills?: Json
+          source_site?: string | null
+          source_url?: string | null
+          stats?: Json
+          tags?: string[] | null
+          updated_at?: string
+        }
+        Update: {
+          author?: string | null
+          class?: string
+          created_at?: string
+          difficulty?: string | null
+          gear?: Json
+          id?: string
+          is_meta?: boolean | null
+          name?: string
+          patch_version?: string | null
+          playstyle?: string
+          rating?: number | null
+          season?: string | null
+          skills?: Json
+          source_site?: string | null
+          source_url?: string | null
+          stats?: Json
+          tags?: string[] | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      scraping_logs: {
+        Row: {
+          builds_found: number | null
+          created_at: string
+          error_message: string | null
+          id: string
+          site: string
+          status: string
+          url: string
+        }
+        Insert: {
+          builds_found?: number | null
+          created_at?: string
+          error_message?: string | null
+          id?: string
+          site: string
+          status: string
+          url: string
+        }
+        Update: {
+          builds_found?: number | null
+          created_at?: string
+          error_message?: string | null
+          id?: string
+          site?: string
+          status?: string
+          url?: string
+        }
+        Relationships: []
+      }
+      user_builds: {
+        Row: {
+          build_id: string
+          created_at: string
+          custom_name: string | null
+          id: string
+          is_favorite: boolean | null
+          notes: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          build_id: string
+          created_at?: string
+          custom_name?: string | null
+          id?: string
+          is_favorite?: boolean | null
+          notes?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          build_id?: string
+          created_at?: string
+          custom_name?: string | null
+          id?: string
+          is_favorite?: boolean | null
+          notes?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_builds_build_id_fkey"
+            columns: ["build_id"]
+            isOneToOne: false
+            referencedRelation: "builds"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
