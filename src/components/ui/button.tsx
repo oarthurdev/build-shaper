@@ -18,6 +18,9 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        diablo: "bg-gradient-diablo-primary text-primary-foreground hover:shadow-diablo-glow transition-all duration-300 font-semibold",
+        diabloGold: "bg-gradient-diablo-gold text-accent-foreground hover:shadow-diablo-glow transition-all duration-300 font-semibold",
+        diabloOutline: "border-2 border-diablo-red bg-transparent text-diablo-red hover:bg-diablo-red hover:text-primary-foreground transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -52,6 +52,15 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				diablo: {
+					red: 'hsl(var(--diablo-red))',
+					'red-dark': 'hsl(var(--diablo-red-dark))',
+					gold: 'hsl(var(--diablo-gold))',
+					'gold-dark': 'hsl(var(--diablo-gold-dark))',
+					'bg-primary': 'hsl(var(--diablo-bg-primary))',
+					'bg-secondary': 'hsl(var(--diablo-bg-secondary))',
+					'bg-tertiary': 'hsl(var(--diablo-bg-tertiary))',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -67,6 +76,18 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			backgroundImage: {
+				'gradient-diablo-primary': 'var(--gradient-diablo-primary)',
+				'gradient-diablo-gold': 'var(--gradient-diablo-gold)',
+				'gradient-diablo-dark': 'var(--gradient-diablo-dark)',
+			},
+			boxShadow: {
+				'diablo-glow': 'var(--shadow-diablo-glow)',
+				'diablo-card': 'var(--shadow-diablo-card)',
+			},
+			transitionTimingFunction: {
+				'diablo': 'var(--transition-diablo)',
 			},
 			keyframes: {
 				'accordion-down': {

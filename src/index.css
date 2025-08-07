@@ -8,35 +8,56 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 13% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 13% 12%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 13% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 348 83% 47%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217 19% 18%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 217 19% 18%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 93% 47%;
+    --accent-foreground: 220 13% 8%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 217 19% 18%;
+    --input: 217 19% 18%;
+    --ring: 348 83% 47%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom Diablo-themed design tokens */
+    --diablo-red: 348 83% 47%;
+    --diablo-red-dark: 348 83% 35%;
+    --diablo-gold: 45 93% 47%;
+    --diablo-gold-dark: 45 93% 35%;
+    --diablo-bg-primary: 220 13% 8%;
+    --diablo-bg-secondary: 220 13% 12%;
+    --diablo-bg-tertiary: 217 19% 18%;
+    
+    /* Gradients */
+    --gradient-diablo-primary: linear-gradient(135deg, hsl(348 83% 47%) 0%, hsl(348 83% 35%) 100%);
+    --gradient-diablo-gold: linear-gradient(135deg, hsl(45 93% 47%) 0%, hsl(45 93% 35%) 100%);
+    --gradient-diablo-dark: linear-gradient(135deg, hsl(220 13% 12%) 0%, hsl(217 19% 18%) 100%);
+    
+    /* Shadows */
+    --shadow-diablo-glow: 0 0 20px hsl(348 83% 47% / 0.3);
+    --shadow-diablo-card: 0 10px 30px -10px hsl(220 13% 8% / 0.8);
+    
+    /* Animations */
+    --transition-diablo: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
